@@ -1,0 +1,191 @@
+<!doctype html>  
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		
+		<title>HTML5 is awesome!</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		
+		<link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+		
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/theme/default.css">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<script>
+			// If the query includes 'print-pdf' we'll use the PDF print sheet
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	
+	<body>
+		
+		<div class="reveal">
+
+			<!-- Used to fade in a background when a specific slide state is reached -->
+			<div class="state-background"></div>
+			
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+<section>
+                    <h1>Testing Interferences</h1> <h4
+                    class="inverted">Examining effects of GPS, Wi-Fi and
+                    CPU stress on Magic Compass Shell Android app</h4>
+                    <p>Jayant Khopale</p> <div style="position: absolute;
+                    bottom:10px; left:70%; margin-left: -90px">
+                        <p>Sensor Platforms, Inc.</p>
+                    </div> <script>
+                        // Delicously hacky. Look away.
+                        if( navigator.userAgent.match(
+                        /(iPhone|iPad|iPod|Android)/i ) ) document.write(
+                        '<p style="color: rgba(0,0,0,0.3); text-shadow:
+                        none;">('+'Tap to navigate'+')</p>' );
+                    </script>
+                </section>
+
+                <section>
+                    <h2>Outline</h2> <ul>
+                        <li>Introduction</li> <li>Wi-Fi Interference</li>
+                        <li>GPS Inteference</li> <li>CPU Stress
+                        Interference</li> <li>Tethering</li>
+                        <li>Improvements</li>
+                    </ul>
+
+                </section>
+
+                <section>
+                    <h2>Introduction</h2> <p align="justify">Initial
+                    motivation came from John Rusnak to observe if the
+                    interferences caused any data anomaly issues.</p>
+                    <p align ="justify">The goal was to watch if the
+                    algorithm performed reasonably well in a scenario
+                    where the sensors would be in use.</p>
+                </section>
+
+                <!-- Example of nested vertical slides --> <section>
+                    <h2>Wi-Fi Interference</h2> 
+			<img src="assets/10-device-access-network-wifi.png">
+
+                    <p align="justify">
+
+                    <ul>
+                        <li class="fragment">Bombard mode</li>
+                        <li class="fragment">Time interval</li> <li
+                        class="fragment">Variabe packet size</li> <li
+                        class="fragment">Variable time interval</li>
+                    </ul>
+
+                    </p>
+                </section>
+
+                <section>
+                    <h2>GPS Interference </h2> <img
+                    src="assets/10-device-access-location-searching.png">
+                    <p align="justify">
+                        This mode just updates and searches for the user
+                        location every 1 second.
+                    </p> <p align="justify">
+                        The location is retrieved every second assuming
+                        that the user is stationary.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>CPU Stress Interference</h2> <img
+                    src="assets/cpu-usage-icon.png"> <p align="justify">
+                        This mode spawns background processes based on
+                        the duty cycle.
+                    </p> <p align="justify">
+                        Android system limits the value of duty cycle
+                        to 50%.
+                    </p>
+
+                </section>
+
+
+                <section>
+                    <h2>Tethering</h2> <img
+                    src="assets/10-device-access-usb.png"> <p
+                    align="justify">
+                       Just a small Ubuntu native application to display
+                       the sensor values from a Beagle board/tab.
+                    </p>
+                </section>
+
+                <section>
+                     <h2>Improvements</h2> <p align="justify">
+                        Though the Android app and the tethering app are
+                        well contained and robust, there is a reasonable
+                        scope for improvement.
+                     </p> <p align="justify">
+                        Improving the file upload capability from the
+                        device to the server is of prime importance.
+                     </p> <p align="justify">
+                        Displaying the results on the android device
+                        from the server in a responsive way is another
+                        feature to be improved.
+                     </p>
+                 </section>
+
+                <section>
+                     <h2>Questions?</h2>
+                </section>
+
+				
+			</div>
+
+			<!-- The navigational controls UI -->
+			<aside class="controls">
+				<a class="left" href="#">&#x25C4;</a>
+				<a class="right" href="#">&#x25BA;</a>
+				<a class="up" href="#">&#x25B2;</a>
+				<a class="down" href="#">&#x25BC;</a>
+			</aside>
+
+			<!-- Presentation progress bar -->
+			<div class="progress"><span></span></div>
+			
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+			
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/linear(2d)
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'socket.io/socket.io.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+					{ src: 'plugin/speakernotes/client.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+				]
+			});
+			
+		</script>
+
+	</body>
+</html>
